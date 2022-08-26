@@ -1,0 +1,85 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Student Dashborad</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <nav class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <div class="d-flex">
+           
+            <button class="btn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Student</button>
+          </div>
+        </nav>
+      </div>
+    </nav>
+    <table class="table table-triped table-hover">
+      <thead>
+        
+        </thead>
+        <tbody>
+        <tr *ngFor=" let student of studentList">
+          
+            <th>{{student.id}}</th>
+            <th>{{student.name}}</th>
+            <th>{{student.class}}</th>
+            <th>{{student.email}}</th>
+            <th>{{student.mobile}}</th>
+            
+          
+          <th>
+            <input type="button" value="Edit" (click)="editStudent(student)" class="btn btn-success me-2"/>
+            <input type="button" value="Delete" (click)="deleteStudent(student)" class="btn btn-danger "/></th>
+        </tr>
+      </tbody>
+    </table>
+  
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Student Registration</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form [formGroup]="studentValue">
+        <div class="mb-3">
+          <label for="txtName" class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control"   id="txtName" placeholder="Enter your Name"/>
+        </div>
+        <div class="mb-3">
+          <label for="txtClass" class="form-label">Class</label>
+          <input type="email" formControlName="class"  class="form-control"  id="txtClass" placeholder="Enter your class"/>
+        </div>
+        <div class="mb-3">
+          <label for="txtEmail" class="form-label">Email address</label>
+          <input type="email" formControlName="email" class="form-control"  id="txtEmail" placeholder="Enter your email"/>
+        </div>
+        <div class="mb-3">
+          <label for="txtMobile"  class="form-label">Mobile</label>
+          <div class="input-group">
+          <div class="input-group-text">+216</div>
+          <input type="mobile"  class="form-control" formControlName="mobile" id="txtMobile" placeholder="Enter your mobile"/>
+        </div>
+      </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="btnSaveShow" class="btn btn-primary" (click)="AddStudent()">Save</button>
+        <button type="button" *ngIf="btnUpdateShow" class="btn btn-primary" (click)="updateStudent()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  
+  
+
+
+

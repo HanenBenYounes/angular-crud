@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "gdh",
+      "class": "15th",
+      "email": "gdh@gmail.com",
+      "mobile": "254698713"
+    },
+    {
+      "id": 3,
+      "name": "ab",
+      "class": "10th",
+      "email": "han@gmail.com",
+      "mobile": "2365478987"
+    },
+    {
+      "id": 4,
+      "name": "han",
+      "class": "7th",
+      "email": "b@gmail.com",
+      "mobile": "2365478987"
+    },
+    {
+      "id": 5,
+      "name": "c",
+      "class": "15th",
+      "email": "c@gmail.com",
+      "mobile": "11111111111"
+    }
+  ],
+  "commetns": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
